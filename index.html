@@ -16,11 +16,23 @@
         <table>
             <tr><th>Data</th></th>Cena złota</th></tr>
             <tr><td id="date0"></td><td id="orice0"></td></tr>
+
+            <tr><th>Data</th></th>Cena złota</th></tr>
+            <tr><td id="date1"></td><td id="orice1"></td></tr>
+
+            <tr><th>Data</th></th>Cena złota</th></tr>
+            <tr><td id="date2"></td><td id="orice2"></td></tr>
+
+            <tr><th>Data</th></th>Cena złota</th></tr>
+            <tr><td id="date3"></td><td id="orice3"></td></tr>
+        
+            <tr><th>Data</th></th>Cena złota</th></tr>
+            <tr><td id="date4"></td><td id="orice4"></td></tr>
         </table>
 
         <script type="text/javascript">
             // wprowadz adres do przegladarki i zobacz, co takiego sie wyswietli
-            fetch('http://api.nbp.pl/api/cenyzlota?format=json')
+            fetch('http://api.nbp.pl/api/cenyzlota/last/5?format=json')
                 .then(response => response.json())
                 .then(response => {
                     // tutaj obslugujemy dane (parametr 'response') z serwera (json)
@@ -28,6 +40,10 @@
 
                     // 'response' to tablica - odwoluje sie do 1 elementu (idx = 0)
                     let priceGold = response[0];
+                    let priceGold = response[1];
+                    let priceGold = response[2];
+                    let priceGold = response[3];
+                    let priceGold = response[4];
 
                     console.log('cena = ' + priceGold.cena);
                     console.log('data = ' + priceGold.data);
